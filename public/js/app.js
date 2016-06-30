@@ -5,6 +5,7 @@ socket.on('connect', function() {
 socket.on('message', function(message) {
 
 	console.log('New message :', message.text);
+	jQuery('.messages').append('<p>'+message.text+'</p>')
 
 });
 // Handling submitting a new form input
