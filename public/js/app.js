@@ -7,3 +7,14 @@ socket.on('message', function(message) {
 	console.log('New message :', message.text);
 
 });
+// Handling submitting a new form input
+var $form = jQuery('#message-form');
+$form.on('submit', function(event) {
+	event.preventDefault();
+	var $message = $form.find('input[name=message]');
+	socket.emit('message', {
+		text: $message.val()
+	});
+	$message.val('');
+
+});
