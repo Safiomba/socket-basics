@@ -3,9 +3,9 @@ socket.on('connect', function() {
 	console.log('Connected to socket.io server');
 });
 socket.on('message', function(message) {
-
 	console.log('New message :', message.text);
-	jQuery('.messages').append('<p>'+message.text+'</p>')
+	jQuery('.messages').append('<p><strong>' +
+		message.date + '</strong>: ' + message.text + '</p>');
 
 });
 // Handling submitting a new form input
